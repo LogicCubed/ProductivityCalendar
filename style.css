@@ -144,8 +144,8 @@ body {
     cursor: pointer;
 }
 
-/* The styling for current date, background color changes and is more bold */
-.Calendar .Days .Day-Today {
+/* The styling for current date (and current date if it has an event), background color changes and is more bold */
+.Calendar .Days .Day-Today, .Day-Event-Active {
     width: 14.28%;
     height: 90px;
     position: relative;
@@ -159,7 +159,7 @@ body {
     align-items: center;
     cursor: pointer;
 }
-.Calendar .Days .Day-Today::before {
+.Calendar .Days .Day-Today::before, .Day-::before {
     width: 100%;
     height: 100%;
     top: 0;
@@ -169,7 +169,7 @@ body {
     box-shadow: 0 0 10px 2px var(--primary-clr);
 }
 
-/* The styling for dates we designate to have an event, has a small underline under the date that is a different color */
+/* The styling for dates we designate to have an event */
 .Calendar .Days .Day-Event {
     width: 14.28%;
     height: 90px;
@@ -181,6 +181,7 @@ body {
     cursor: pointer;
     position: relative;
 }
+/* Adds an underline to days designated with an event */
 .Calendar .Days .Day-Event::after {
     width: 75%;
     height: 6px;
@@ -191,4 +192,28 @@ body {
     border-radius: 30px;
     transform: translateX(-50%);
     background-color: rgb(226, 88, 226);
+}
+
+/* Adds an underline to current date if it is designated with an event */
+.Calendar .Days .Day-Event-Active::after {
+    width: 75%;
+    height: 6px;
+    bottom: 10%;
+    left: 50%;
+    content: "";
+    position: absolute;
+    border-radius: 30px;
+    transform: translateX(-50%);
+    background-color: white;
+}
+
+/* Changes the background color for an event date when we hover over it */
+.Calendar .Days .Day-Event:hover {
+    color: white;
+    background-color:rgb(226, 88, 226);
+}
+/* Changes the background color for an event date underline when we hover over it */
+.Calendar .Days .Day-Event:hover::after {
+    color: white;
+    background-color: white;
 }
