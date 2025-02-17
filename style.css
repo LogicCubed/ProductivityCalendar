@@ -1,0 +1,194 @@
+/* Google font - Roboto that we imported */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* The gray background layer of our website */
+body {
+    background-color:rgba(0, 0, 0, 0.23);
+    display: flex;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+/* The light gray background layer behind our actual calendar layer */
+.container {
+    min-height: 695px;
+    width: 1200px;
+    margin: 0 auto;
+    padding: 5px;
+    border-radius: 10px;
+    position: relative;
+    color: black;
+    background-color:rgb(226, 235, 235);
+    display: flex;
+}
+
+/* Determines the width of the calendar layer, makes it 60% width of our light gray container layer */
+.left {
+    padding: 20px;
+    width: 60%;
+}
+
+/* The square container for our calendar */
+.Calendar {
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+    position: relative;
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+    display: flex; 
+    flex-direction:  column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+/* The styling for the Month/Year that is listed at the top of our calendar */
+.Calendar .Month {
+    height: 75px;
+    width: 100%;
+    padding: 0 50 px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-transform: capitalize;
+    font-weight: 400;
+    font-size: 1.2rem;
+}
+
+/* Converts our arrow symbols, that will allow us to go to the previous/next month, into pointers */
+.Calendar .Month .material-symbols-outlined {
+    cursor: pointer;
+}
+.Calendar .Month .material-symbols-outlined:hover {
+    color: var(--primary-clr);
+}
+
+/* The styling for the Weekday names that is listed at the top of our calendar below the Month */
+.Calendar .Weekdays {
+    height: 50px;
+    width: 100%;
+    padding: 0 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-transform: capitalize;
+    font-weight: 375;
+    font-size: 1rem;
+}
+.Calendar .Weekdays div {
+    height: 100%;
+    width: 14.28%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* The container/matrix that contains all the numerical dates in our month */
+.Calendar .Days {
+    width: 100%;
+    padding: 0 20px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: space-between;
+    font-weight: 425;
+    font-size: 1rem;
+}
+
+/* The styling for each individual date container within our month (that does not belong to the previous/next month) */
+.Calendar .Days .Day {
+    width: 14.28%;
+    height: 90px;
+    color: rgb(153, 134, 134);
+    border: 1px solid rgb(223, 220, 220);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+/* Makes it so that individual date, that is part of the current month, changes color when our mouse hovers over the date square */
+.Calendar .Day:not(.Day-Month-Prev, .Day-Month-Next):hover {
+    color: white;
+    background-color: rgb(226, 88, 226);
+}
+
+/* The styling for each individual date container from the previous month */
+.Calendar .Days .Day-Month-Prev {
+    width: 14.28%;
+    height: 90px;
+    color: lightgrey;
+    border: 1px solid rgb(223, 220, 220);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+/* The styling for each individual date container from the next month */
+.Calendar .Days .Day-Month-Next {
+    width: 14.28%;
+    height: 90px;
+    color: lightgrey;
+    border: 1px solid rgb(223, 220, 220);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+/* The styling for current date, background color changes and is more bold */
+.Calendar .Days .Day-Today {
+    width: 14.28%;
+    height: 90px;
+    position: relative;
+    font-weight: 425;
+    font-size: 1.5rem;
+    color: white;
+    background-color: rgb(226, 88, 226);
+    border: 1px solid rgb(223, 220, 220);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.Calendar .Days .Day-Today::before {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    content: "";
+    position: absolute;
+    box-shadow: 0 0 10px 2px var(--primary-clr);
+}
+
+/* The styling for dates we designate to have an event, has a small underline under the date that is a different color */
+.Calendar .Days .Day-Event {
+    width: 14.28%;
+    height: 90px;
+    color: rgb(153, 134, 134);
+    border: 1px solid rgb(223, 220, 220);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+}
+.Calendar .Days .Day-Event::after {
+    width: 75%;
+    height: 6px;
+    bottom: 10%;
+    left: 50%;
+    content: "";
+    position: absolute;
+    border-radius: 30px;
+    transform: translateX(-50%);
+    background-color: rgb(226, 88, 226);
+}
