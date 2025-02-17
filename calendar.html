@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<html lang = "en" dir = "ltr">
+    <head>
+        <!--Metadata for our website-->
+        <meta charset="UTF-8">
+        <title>Interactive Calendar, CPSC 362 </title>
+        <link rel="stylesheet" href="style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="David Nguyen, Johann Ocuaman, Josh Andrada">
+        <meta name="description" content="Calendar website with a multitude of features for the user to access and use at their will">
+        
+        <!--Stylesheet where we pulled the symbols from-->
+        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+        
+        <!--Stylesheet where we pulled the font from-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <!--The light gray background layer behind our actual calendar layer -->
+        <div class="container">
+            <!--Used to determine width of the calendar layer-->
+            <div class="left">
+                <!--The square container for our calendar-->
+                <div class="Calendar">
+                    <!--The Month/Year that is listed at the top of our calendar-->
+                    <div class="Month">
+                        <i class="material-symbols-outlined">chevron_left</i>       <!--The left arrow symbol next to our month-->
+                        <div class="Date">February 2025</div>                       <!--What month/year our calendar is currently on-->
+                        <i class="material-symbols-outlined">chevron_right</i>      <!--The right arrow symbol next to our month-->
+                    </div>
+                    <!--Weekday names that is listed at the top of our calendar below the Month-->
+                    <div class="Weekdays">
+                        <div>Sun</div>
+                        <div>Mon</div>
+                        <div>Tue</div>
+                        <div>Wed</div>
+                        <div>Thu</div>
+                        <div>Fri</div>
+                        <div>Sat</div>
+                    </div>
+                    <!--The container/matrix that contains all the numerical dates in our month-->
+                    <div class="Days">
+                        <div class="Day-Month-Prev">26</div>        <!--Dates that are from the previous month-->
+                        <div class="Day-Month-Prev">27</div>
+                        <div class="Day-Month-Prev">28</div>
+                        <div class="Day-Month-Prev">29</div>
+                        <div class="Day-Month-Prev">30</div>
+                        <div class="Day-Month-Prev">31</div>
+                        <div class="Day">1</div>
+                        <div class="Day">2</div>
+                        <div class="Day">3</div>
+                        <div class="Day">4</div>
+                        <div class="Day">5</div>
+                        <div class="Day">6</div>
+                        <div class="Day">7</div>
+                        <div class="Day">8</div>
+                        <div class="Day">9</div>
+                        <div class="Day">10</div>
+                        <div class="Day">11</div>
+                        <div class="Day">12</div>
+                        <div class="Day-Today">13</div>                 <!--Current Date-->                      
+                        <div class="Day">14</div>                        
+                        <div class="Day">15</div>                        
+                        <div class="Day">16</div>                        
+                        <div class="Day">17</div>                        
+                        <div class="Day">18</div>                        
+                        <div class="Day">19</div>                        
+                        <div class="Day-Event">20</div>                 <!--Date that has an event we created-->
+                        <div class="Day">21</div>
+                        <div class="Day">22</div>
+                        <div class="Day">23</div>
+                        <div class="Day">24</div>
+                        <div class="Day">25</div>
+                        <div class="Day">26</div>
+                        <div class="Day">27</div>
+                        <div class="Day">28</div>
+                        <div class="Day-Month-Next">1</div>             <!--Date that from the next month-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
