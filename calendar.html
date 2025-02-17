@@ -28,7 +28,7 @@
                     <!--The Month/Year that is listed at the top of our calendar-->
                     <div class="Month">
                         <i class="material-symbols-outlined">chevron_left</i>       <!--The left arrow symbol next to our month-->
-                        <div class="Date">February 2025</div>                       <!--What month/year our calendar is currently on-->
+                        <div class="Date"></div>                                    <!--What month/year our calendar is currently on-->
                         <i class="material-symbols-outlined">chevron_right</i>      <!--The right arrow symbol next to our month-->
                     </div>
                     <!--Weekday names that is listed at the top of our calendar below the Month-->
@@ -43,7 +43,7 @@
                     </div>
                     <!--The container/matrix that contains all the numerical dates in our month-->
                     <div class="Days">
-                        <div class="Day-Month-Prev">26</div>            <!--Dates that are from the previous month-->
+                        <!-- <div class="Day-Month-Prev">26</div>            Dates that are from the previous month
                         <div class="Day-Month-Prev">27</div>
                         <div class="Day-Month-Prev">28</div>
                         <div class="Day-Month-Prev">29</div>
@@ -56,19 +56,19 @@
                         <div class="Day">5</div>
                         <div class="Day">6</div>
                         <div class="Day">7</div>
-                        <div class="Day-Event-Active">8</div>           <!--Current Date and it also has an event-->
+                        <div class="Day-Event-Active">8</div>           Current Date and it also has an event
                         <div class="Day">9</div>
                         <div class="Day">10</div>
                         <div class="Day">11</div>
                         <div class="Day">12</div>
-                        <div class="Day-Today">13</div>                 <!--Current Date-->                      
+                        <div class="Day-Today">13</div>                 Current Date                     
                         <div class="Day">14</div>                        
                         <div class="Day">15</div>                        
                         <div class="Day">16</div>                        
                         <div class="Day">17</div>                        
                         <div class="Day">18</div>                        
                         <div class="Day">19</div>                        
-                        <div class="Day-Event">20</div>                 <!--Date that has an event we created-->
+                        <div class="Day-Event">20</div>                 Date that has an event we created
                         <div class="Day">21</div>
                         <div class="Day">22</div>
                         <div class="Day">23</div>
@@ -77,18 +77,20 @@
                         <div class="Day">26</div>
                         <div class="Day">27</div>
                         <div class="Day">28</div>
-                        <div class="Day-Month-Next">1</div>             <!--Date that from the next month-->
+                        <div class="Day-Month-Next">1</div>             Date from the next month -->
                     </div>
                     <div class="Go-To-Today">
                         <div class="Go-To">
                             <input type="Text" placeholder="MM/YYYY" class="Month-Input">
                             <button class="Go-To-Button">Go</button>
                         </div>
-                        <button class="Today-Button">Today</button>
+                        <div class="Today-Button">
+                            <button class="Today-Button">Today</button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-
+        <script src="function.js"></script>
     </body>
 </html>
