@@ -1,89 +1,79 @@
 //Define our variables for our calendar functions
 const calendar = document.querySelector(".Calendar"),
-    date = document.querySelector(".Date"),
-    daysContainer = document.querySelector(".Days"),
+    calendarDate = document.querySelector(".Date"),
+    ContainerDays = document.querySelector(".Days"),
     prevMonth = document.querySelector(".Month i.material-symbols-outlined:first-child"),
     nextMonth = document.querySelector(".Month i.material-symbols-outlined:last-child");
-let today = new Date();
-let activeDay;
-let month = today.getMonth(); 
-let year = today.getFullYear();
+    
+let presentDate = new Date();
+let selectedDay;
+let currentMonth = presentDate.getMonth(); 
+let currentYear = presentDate.getFullYear();
 const months = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
+    "January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December"
 ];
 
 //Function to generate the numerical dates in a month 
-function CalendarDates(){
-    const FirstDate = new Date(year, month, 1);
-    const LastDate = new Date(year, month + 1, 0);
-    const PrevLastDate = new Date(year, month, 0);
-    const PrevLastDateGet = PrevLastDate.getDate();
-    const LastDateGet = LastDate.getDate();
-    const day = FirstDate.getDay();  
-    const NextDate = 7 - LastDate.getDay() - 1;
+function PopulateDatesCalendar(){
+    const FirstDay = new Date(currentYear, currentMonth, 1);
+    const LastDay = new Date(currentYear, currentMonth + 1, 0);
+    const PrevLastDay = new Date(currentYear, currentMonth, 0);
+    const PrevLastDayGet = PrevLastDay.getDate();
+    const LastDayGet = LastDay.getDate();
+    const day = FirstDay.getDay();  
+    const NextDay = 7 - LastDay.getDay() - 1;
 
     //Update month/year at the top of the calendar
-    date.innerHTML = months[month] + " " + year;
+    calendarDate.innerHTML = months[currentMonth] + " " + currentYear;
 
     //Add in the days
-    let days = "";
+    let daysHTML = "";
 
     //Generates the dates from the previous month (greyed out) for the current month we are on
     for (let x = day; x > 0; x--) {
-        days += `<div class="Day-Month-Prev">${PrevLastDateGet - x + 1}</div>`;
+        daysHTML += `<div class="Day-Month-Prev">${PrevLastDayGet - x + 1}</div>`;
     }
 
     //Generates the dates for the current month we are on
-    for (let i = 1; i <= LastDateGet; i++) {  // changed the loop to <=
+    for (let i = 1; i <= LastDayGet; i++) {  // changed the loop to <=
         // If day is today, add class 'Day-Today'
-        if (i == new Date().getDate() && year == new Date().getFullYear() && month == new Date().getMonth()) {
-            days += `<div class="Day-Today">${i}</div>`;
+        if (i == new Date().getDate() && currentYear == new Date().getFullYear() && currentMonth == new Date().getMonth()) {
+            daysHTML += `<div class="Day-Today">${i}</div>`;
         } else {
             //The remaining days
-            days += `<div class="Day">${i}</div>`;
+            daysHTML += `<div class="Day">${i}</div>`;
         }
     }
 
     //Generates the dates from the previous month (greyed out) for the current month we are on
-    for (let i = 1; i <= NextDate; i++) {
-        days += `<div class="Day-Month-Next">${i}</div>`;
+    for (let i = 1; i <= NextDay; i++) {
+        daysHTML += `<div class="Day-Month-Next">${i}</div>`;
     }
 
-    daysContainer.innerHTML = days;
+    ContainerDays.innerHTML = daysHTML;
 }
 
 //Call our function to fill in the numeric dates for this month
-CalendarDates();
+PopulateDatesCalendar();
 
 //Function to add in all the previous months to the calendar
 function PreviousMonths() {
-    month--;
-    if (month < 0) {
-        month = 11;
-        year--;
+
+    if (--currentMonth < 0) {
+        currentMonth = 11;
+        currentYear--;
     }
-    CalendarDates();
+    PopulateDatesCalendar();
 }
 
 //Function to add in all the future months to the calendar
 function NextMonths() {
-    month++;
-    if (month > 11) {
-        month = 0;
-        year++;
+    if (++currentMonth > 11) {
+        currentMonth = 0;
+        currentYear++;
     }
-    CalendarDates();
+    PopulateDatesCalendar();
 }
 
 //Call our function to all all the previous months and their dates to our calendar
