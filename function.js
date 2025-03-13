@@ -3,7 +3,11 @@ const calendar = document.querySelector(".Calendar"),
     calendarDate = document.querySelector(".Date"),
     ContainerDays = document.querySelector(".Days"),
     prevMonth = document.querySelector(".Month i.material-symbols-outlined:first-child"),
-    nextMonth = document.querySelector(".Month i.material-symbols-outlined:last-child");
+    nextMonth = document.querySelector(".Month i.material-symbols-outlined:last-child"),
+    TodayButton = document.querySelector(".Today-Button"),
+    GoToButton = document.querySelector(".Go-To-Button"),
+    ButtonMonthInput = document.querySelector(".Month-Input");
+
     
 let presentDate = new Date();
 let selectedDay;
@@ -80,3 +84,51 @@ function NextMonths() {
 prevMonth.addEventListener("click", PreviousMonths);
 //Call our function to all all the future months and their dates to our calendar
 nextMonth.addEventListener("click", NextMonths);
+
+//Adds button functionality to the Today button, will jump to present month/year
+TodayButton.addEventListener("click", () => {
+    let TodayDate = new Date();
+    currentMonth = TodayDate.getMonth();
+    currentYear = TodayDate.getFullYear();
+    PopulateDatesCalendar();
+});
+
+//Code that allows us to write the MM/YYYY into our GoTo text area
+ButtonMonthInput.addEventListener("keyup", (e) => {
+    //Only numbers are allowed as an input
+    ButtonMonthInput.value = ButtonMonthInput.value.replace(/[^0-9/]/g, "");
+    // '/' is to be automatically added if two numbers are entered to separate month from date
+    if (ButtonMonthInput.value.length === 2) {
+        ButtonMonthInput.value += "/";
+    }
+    //Cannot have more than 7 characters including the '/' separator
+    if (ButtonMonthInput.value.length > 7) {
+        ButtonMonthInput.value = ButtonMonthInput.value.slice(0,7) 
+    }
+    //Handle backspace deletion for properly formatted input
+    if (event.inputType == "deleteContentBackward" && ButtonMonthInput.value.length === 3) {
+        if (ButtonMonthInput.value.length == 3) {
+            ButtonMonthInput.value = ButtonMonthInput.value.slice(0,2);
+        }
+    }
+});
+
+//Add functionality to our Go To button so we can enter a month/year and have our calendar display that month/year
+GoToButton.addEventListener("click", JumpToDate);
+
+//Function that will jump to our date
+function JumpToDate() {
+    const enteredDate = ButtonMonthInput.value.split("/");
+    if (enteredDate.length === 2) {
+        let enteredMonth = parseInt(enteredDate[0], 10);
+        let enteredYear = enteredDate[1];
+        if (enteredMonth > 0 && enteredMonth <= 12 && enteredYear.length === 4) {
+            currentMonth = enteredMonth - 1;
+            currentYear = parseInt(enteredYear, 10);
+            PopulateDatesCalendar();
+            return;
+        }
+    }
+    // Display an error for invalid date input
+    alert("Invalid date format. Please enter MM/YYYY.");
+}
