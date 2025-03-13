@@ -10,7 +10,7 @@
     border-radius: 10px;
     position: relative;
     color: black;
-    background-color:rgb(226, 235, 235);
+    background-color:#07aecb;
     display: flex;
 }
 
@@ -73,4 +73,26 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
+}
+
+.navigate-button {
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #ffffff;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 93px;
+}
+
+.navigate-button:hover {
+    background-color: #046b86;
+}
+
+.kanban__item-input:focus {
+    outline: 2px solid black; /* Custom color for outline */
+    box-shadow: 0 0 5px rgba(7, 174, 203, 0.5); /* Optional shadow for a soft effect */
 }

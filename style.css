@@ -9,7 +9,7 @@
 
 /* The gray background layer of our website */
 body {
-    background-color:rgba(0, 0, 0, 0.23);
+    background-color:rgba(0, 0, 0, 0);
     display: flex;
     min-height: 100vh;
     justify-content: center;
@@ -25,7 +25,7 @@ body {
     border-radius: 10px;
     position: relative;
     color: black;
-    background-color:rgb(226, 235, 235);
+    background-color:#07aecb;
     display: flex;
 }
 
@@ -33,6 +33,15 @@ body {
 .left {
     padding: 20px;
     width: 60%;
+}
+
+.right {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-left: 20px;
+    margin-top: 20px;
 }
 
 /* The square container for our calendar */
@@ -117,7 +126,7 @@ body {
 /* Makes it so that individual date, that is part of the current month, changes color when our mouse hovers over the date square */
 .Calendar .Day:not(.Day-Month-Prev, .Day-Month-Next):hover {
     color: white;
-    background-color: rgb(226, 88, 226);
+    background-color: #07aecb;
 }
 
 /* The styling for each individual date container from the previous month */
@@ -152,7 +161,7 @@ body {
     font-weight: 425;
     font-size: 1.5rem;
     color: white;
-    background-color: rgb(226, 88, 226);
+    background-color: #07aecb;
     border: 1px solid rgb(223, 220, 220);
     display: flex;
     justify-content: center;
@@ -272,4 +281,27 @@ body {
 .Calendar .Go-To-Today button:hover {
     color: white;
     background-color:rgb(226, 88, 226);
+}
+
+.navigate-button {
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #ffff;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover effect */
+.navigate-button:hover {
+    background-color: #046b86;
+    transform: scale(1.05);
+}
+
+/* Add a subtle press effect */
+.navigate-button:active {
+    transform: scale(0.95);
 }
