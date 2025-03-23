@@ -466,6 +466,13 @@ body {
     margin-top: 50px;
 }
 
+.feels-like {
+    margin-top: 5px;
+    margin-bottom: 20px;
+    padding: 5px;
+    font-size: 1.2em;
+}
+
 .col {
     display: flex;
     align-items: center;
