@@ -1,0 +1,111 @@
+/* Google font - Roboto that we imported */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: var(--base-color);
+}
+
+/* The light gray background layer behind our kanban board */
+.container {
+    min-height: 695px;
+    width: 1200px;
+    margin: 0 auto;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    padding: 5px;
+    border-radius: 10px;
+    position: relative;
+    background-color: var(--secondary-color);
+    display: flex;
+}
+
+.kanban {
+    display: flex;
+    flex-grow: 1;
+    padding: 30px;
+    width: 750px;
+    background: var(--secondary-color);
+    border-radius: 5px;
+}
+
+.kanban * {
+    font-family: 'Roboto', sans-serif;
+}
+
+.kanban__column {
+    flex: 1;
+}
+
+.kanban__column > .kanban__column-title {
+    font-weight: bold;
+}
+
+.kanban__column:not(:last-child) {
+    margin-right: 30px;
+}
+
+.kanban__column-title {
+    margin-bottom: 20px;
+    font-size: 30px;
+    color: white;
+    user-select: none;
+}
+
+.kanban__item-input {
+    padding: 10px 15px;
+    box-sizing: border-box;
+    background: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.kanban__dropzone {
+    height: 10px;
+    transition: background 0.15s, height 0.15s;
+}
+
+.kanban__dropzone--active {
+    height: 20px;
+    background: rbga(0, 0, 0, 0.25);
+}
+
+.kanban__add-item {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background: rgba(0, 0, 0, 0.1);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.navigate-button {
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #ffffff;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 93px;
+}
+
+.navigate-button:hover {
+    background-color: var(--tertiary-color);
+    color: white;
+}
+
+.kanban__item-input:focus {
+    outline: 2px solid black; /* Custom color for outline */
+    box-shadow: 0 0 5px var(--tertiary-color); /* Optional shadow for a soft effect */
+}
