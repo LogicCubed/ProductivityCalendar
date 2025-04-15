@@ -73,7 +73,20 @@
                     </div>
                 </div>
             </div>
-            <!--Weather Application-->
+        <div class="stacked-modules">
+            <!--Stopwatch Module-->
+            <div id="stopwatchcontainer">
+                <div id="stopwatchdisplay">
+                    00:00:00:00
+                </div>
+                <div id="stopwatchcontrols">
+                    <button id="startBtn" onClick="start()">Start</button>
+                    <button id="stopBtn" onClick="stop()">Stop</button>
+                    <button id="resetBtn" onClick="reset()">Reset</button>
+                </div>
+            </div>
+
+            <!--Weather Module-->
             <div class="card">
                 <div class="search">
                     <input type="text" placeholder="Enter City Name"
@@ -106,7 +119,7 @@
                     </div>
                 </div>
             </div>
-        
+        </div>
         <script>
         
         const apiKey = "38a7094d0e25344cef074d36c21f4ee6";
@@ -194,6 +207,7 @@
             </div>
         </footer>
         <script src="JS/calendar.js"></script>
+        <script src="JS/stopwatch.js"></script>
     </body>
     
 </html>

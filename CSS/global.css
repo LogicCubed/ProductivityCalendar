@@ -13,7 +13,7 @@
     --tertiary-color: #046b86;
     --text-color: white;
     --calendar-text-color: #998686;
-    --secondary-text-color: black;
+    --secondary-text-color: rgb(74, 74, 104);
 }
 
 .darkmode {

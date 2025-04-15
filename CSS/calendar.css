@@ -390,3 +390,61 @@ body {
     margin-top: 10px;
     display: none;
 }
+
+#stopwatchcontainer {
+    width: 90%;
+    max-width: 470px;
+    background: var(--tertiary-color);;
+    color: var(--base-color);
+    margin: 20px 20px auto 10px;
+    border-radius: 20px;
+    padding: 40px 40px;
+    text-align: center;
+}
+
+#stopwatchdisplay {
+    font-size: 2rem;
+    font-family: monospace;
+    font-weight: bold;
+    color: var(--secondary-text-color);
+    margin-bottom: 25px;
+    background-color: var(--base-color);
+    border-radius: 25px;
+}
+
+#stopwatchcontrols button {
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 10px 20px;
+    margin: 5px;
+    min-width: 50px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    color: white;
+    transition: background-color 0.5s ease;
+}
+
+#startBtn {
+    background-color: hsl(115, 100%, 40%);
+}
+
+#startBtn:hover {
+    background-color: hsl(115, 100%, 30%);
+}
+
+#stopBtn {
+    background-color: hsl(10, 90%, 50%);
+}
+
+#stopBtn:hover {
+    background-color: hsl(10, 90%, 40%);
+}
+
+#resetBtn {
+    background-color: hsl(205, 90%, 60%);
+}
+
+#resetBtn:hover {
+    background-color: hsl(205, 90%, 50%);
+}
