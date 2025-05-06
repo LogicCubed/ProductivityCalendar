@@ -1,16 +1,8 @@
-*{
-    margin: 0;
-    padding: 0;
-    font-family: 'Poppins', sans-serif;
-    box-sizing: border-box;
-
-
-}
 .container{
     width: 100%;
     min-height: 100vh;
-    background: linear-gradient(135deg, #cf9aff, #95c0ff);
-    color: #fff;
+    background: var(--base-color);
+    color: var(--secondary-text-color);
     padding-top: 4%;
     padding-left: 10%;
    
@@ -34,7 +26,9 @@
 .container button{
     display: flex;
     align-items: center;
-    background: linear-gradient(#9418fd, #571094);
+    background: var(--tertiary-color);
+    color: white;
+    font-weight: bold;
     font-size: 16px;
     outline: 0;
     border: 0;
