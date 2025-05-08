@@ -2,8 +2,18 @@ const notesContainer = document.querySelector(".notes-container");
 const createBtn = document.querySelector(".btn");
 let notes = document.querySelectorAll(".input-box");
 
-function showNotes(){
-    notesContainer.innerHTML = localStorage.getItem("notes");
+function showNotes() {
+    const storedNotes = localStorage.getItem("notes");
+    if (storedNotes) {
+        notesContainer.innerHTML = storedNotes;
+
+        const existingNotes = document.querySelectorAll(".input-box");
+        existingNotes.forEach(note => {
+            let img = document.createElement("img");
+            img.src = "images/delete.png";
+            note.appendChild(img);
+        });
+    }
 }
 showNotes();
 
@@ -15,14 +25,14 @@ function updateStorage(){
 createBtn.addEventListener("click", ()=>{
     let inputBox = document.createElement("p");
     let img = document.createElement("img");
-    inputBox.classname = "input-box";
+    inputBox.className = "input-box";
     inputBox.setAttribute("contenteditable", "true");
     img.src = "images/delete.png";
     notesContainer.appendChild(inputBox).appendChild(img);
 })
 
 notesContainer.addEventListener("click", function(e){
-    if(e.target.tagName === "IMG"){
+    if (e.target.tagName === "IMG") {
         e.target.parentElement.remove();
         updateStorage();
     }

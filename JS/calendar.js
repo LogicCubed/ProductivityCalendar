@@ -227,6 +227,9 @@ function addListener() {
             //Add "active" class to the clicked day
             e.target.classList.add("active");
 
+            // Trigger the event form display
+            addEventBtn.style.display = "flex";
+
             //Call active day functions AFTER active class is assigned
             getActiveDay(e.target.innerHTML);
             updateEvents(e.target.innerHTML);

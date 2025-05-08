@@ -184,7 +184,7 @@ body {
 .Calendar .Days .Day-Event {
     width: 14.28%;
     height: 90px;
-    color: palevioletred;
+    color: var(--secondary-color);
     background-color: white;
     border: 1px solid rgb(223, 220, 220);
     display: flex;
@@ -203,7 +203,7 @@ body {
     position: absolute;
     border-radius: 30px;
     transform: translateX(-50%);
-    background-color: palevioletred;
+    background-color: var(--secondary-color);
 }
 
 /* Adds an underline to current date if it is designated with an event */
@@ -216,7 +216,7 @@ body {
     position: absolute;
     border-radius: 30px;
     transform: translateX(-50%);
-    background-color: palevioletred;
+    background-color: var(--secondary-color);
 
 }
 
@@ -255,7 +255,7 @@ body {
 .Calendar .Days .Day.active,
 .Calendar .Days .Day-Event.active,
 .Calendar .Days .Day-Today.active {
-    background-color: palevioletred !important; 
+    background-color: var(--secondary-color) !important; 
     color: white !important;
     border: 1px solid rgb(223, 220, 220);
     font-size: 1.5rem;
@@ -264,7 +264,7 @@ body {
 }
 
 .Calendar .Days .Day-Event.active::after {
-    background-color: palevioletred;
+    background-color: var(--secondary-color);
 }
 
 /* Styling for the area where the go button and the date input area are located */
@@ -667,6 +667,12 @@ body {
     color: var(--primary-clr);
 }
 
+.add-event-input input:focus {
+    outline: none;
+    border: 2px solid var(--primary-clr);
+    box-shadow: 0 0 4px var(--primary-clr);
+}
+
 .add-event-footer {
     padding: 20px;
     justify-content: center;
@@ -681,7 +687,7 @@ body {
     height: 40px;
     font-size: 14px;                    
     border-radius: 6px;                 
-    background-color: #9c27b0;          
+    background-color: var(--secondary-color);          
     color: white;
     display: flex;
     justify-content: center;
@@ -692,7 +698,7 @@ body {
 }
 
 .add-event-btn:hover {
-    background-color: #ab47bc;           
+    background-color: var(--secondary-color);           
 }
 
 .add-event {

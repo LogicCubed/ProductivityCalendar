@@ -10,6 +10,9 @@ function start() {
         startTime = Date.now() - elapsedTime;
         timer = setInterval(update, 10);
         isRunning = true;
+
+        localStorage.setItem("isRunning", true);
+        localStorage.setItem("startTime", startTime);
     }
     
 }
@@ -20,6 +23,9 @@ function stop() {
         clearInterval(timer);
         elapsedTime = Date.now() - startTime;
         isRunning = false;
+
+        localStorage.setItem("isRunning", false);
+        localStorage.setItem("elapsedTime", elapsedTime);
     }
 
 }
@@ -29,6 +35,11 @@ function reset() {
     startTime = 0;
     elapsedTime = 0;
     isRunning = false;
+
+    localStorage.removeItem("startTime");
+    localStorage.removeItem("elapsedTime");
+    localStorage.setItem("isRunning", false);
+
     display.textContent = "00:00:00:00";
 }
 
@@ -49,3 +60,19 @@ function update() {
 
     display.textContent = `${hours}:${minutes}:${seconds}:${milliseconds}`;
 }
+
+window.onload = function () {
+    const running = localStorage.getItem("isRunning") === "true";
+    const savedStartTime = parseInt(localStorage.getItem("startTime"));
+    const savedElapsedTime = parseInt(localStorage.getItem("elapsedTime")) || 0;
+
+    if (running && savedStartTime) {
+        startTime = savedStartTime;
+        elapsedTime = Date.now() - startTime;
+        isRunning = true;
+        timer = setInterval(update, 10);
+    } else if (savedElapsedTime) {
+        elapsedTime = savedElapsedTime;
+        update();
+    }
+};
