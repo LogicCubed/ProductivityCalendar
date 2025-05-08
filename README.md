@@ -15,6 +15,7 @@ The website consists of three main pages:
 - **Main Webpage**
 - **Kanban Tab**
 - **Notes Tab**
+- **Timer Tab**
 
 ---
 
@@ -36,11 +37,6 @@ The website consists of three main pages:
   - Times must be in **24-hour format** (`00:00` to `24:00`).
   - Click `Add Event` to save it.
 
-### Stopwatch
-- Click `Start` to begin the timer.
-- Click `Stop` to pause.
-- Click `Reset` to reset to `00:00:00:00`.
-
 ### Weather Search
 - Type a city name into the input field and press `Enter` or click the search icon.
 - Displays current temperature, "feels like", humidity, and wind speed.
@@ -52,6 +48,7 @@ The website consists of three main pages:
 ### Navigation
 - Click `Kanban` in the header to open the Kanban board.
 - Click `Notes` in the header to open the notes section.
+- Click `Timer` to go to the Timer tab.
 
 ---
 
@@ -80,6 +77,7 @@ The website consists of three main pages:
 ### Navigation
 - Click `Calendar` in the header to return to the main page.
 - Click `Notes` to go to the Notes tab.
+- Click `Timer` to go to the Timer tab.
 
 ---
 
@@ -100,3 +98,18 @@ The website consists of three main pages:
 ### Navigation
 - Click `Calendar` to return to the main page.
 - Click `Kanban` to go to the Kanban tab.
+- Click `Timer` to go to the Timer tab.
+
+---
+
+## Timer Tab – User Instructions
+
+### Stopwatch
+- Click `Start` to begin the timer.
+- Click `Stop` to pause.
+- Click `Reset` to reset to `00:00:00:00`.
+
+### Navigation
+- Click `Calendar` to return to the main page.
+- Click `Kanban` to go to the Kanban tab.
+- Click `Notes` to go to the Notes tab.
