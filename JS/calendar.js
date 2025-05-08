@@ -355,6 +355,7 @@ addEventSubmit.addEventListener("click", () => {
     //Update events
     updateEvents(selectedDay);
     PopulateDatesCalendar();
+    saveEvents();
 });
 
 //Function to convert 24hr time to AM/PM format
@@ -391,6 +392,7 @@ eventContainer.addEventListener("click", (e) => {
 
         updateEvents(selectedDay);
         PopulateDatesCalendar();
+        saveEvents();
     }
 });
 
